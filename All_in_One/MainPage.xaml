@@ -1,0 +1,43 @@
+﻿<Page xmlns:Controls="using:WinRTXamlToolkit.Controls" 
+    x:Class="All_in_One.MainPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:All_in_One"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:Charting="using:WinRTXamlToolkit.Controls.DataVisualization.Charting"
+    xmlns:Ctls="using:WinRTXamlToolkit.Controls"
+    mc:Ignorable="d">
+
+    <Grid Background="{StaticResource ApplicationPageBackgroundThemeBrush}">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="4*"/>
+            <ColumnDefinition Width="1*"/>
+        </Grid.ColumnDefinitions>
+
+        <Grid Grid.Column="0">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="1*" />
+                <RowDefinition Height="1*" />
+            </Grid.RowDefinitions>
+            <Charting:Chart x:Name="LineChart0" Grid.Row="0" FontSize="12" Height="auto">
+                <Charting:LineSeries Title="Distance(cm)" IndependentValuePath="Time" DependentValuePath="Value" IsSelectionEnabled="True"/>
+            </Charting:Chart>
+            <Charting:Chart x:Name="LineChart1" Grid.Row="1" FontSize="12" Height="auto">
+                <Charting:LineSeries Title="Sound(analog)" IndependentValuePath="Time" DependentValuePath="Value" IsSelectionEnabled="True"/>
+                <Charting:LineSeries Title="Light(lux)" IndependentValuePath="Time" DependentValuePath="Value" IsSelectionEnabled="True"/>
+            </Charting:Chart>
+
+        </Grid>
+        
+
+        <StackPanel Grid.Column="1" VerticalAlignment="Center" Orientation="Vertical">
+            <Ctls:PieSlice x:Name="PieSlice"  Fill="Red" HorizontalAlignment="Center" Radius="50" StartAngle="0" EndAngle="350" Margin="0,20,0,0"/>
+            <TextBlock HorizontalAlignment="Center" TextAlignment="Center" FontSize="12" Text="Rotary(analog)" Margin="0,20,0,0"/>
+            <Rectangle x:Name="Rect0" Fill="Green" HorizontalAlignment="Center" Margin="0,100,0,0" MinWidth="100" MinHeight="50"/>
+            <TextBlock x:Name="Textblock0" HorizontalAlignment="Center" TextAlignment="Center" FontSize="14" Text="On" Margin="0,5,0,0"/>
+            <TextBlock HorizontalAlignment="Center" TextAlignment="Center" FontSize="12" Text="Relay State" Margin="0,20,0,0"/>
+        </StackPanel>
+
+    </Grid>
+</Page>

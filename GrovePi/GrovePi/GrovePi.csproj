@@ -21,13 +21,14 @@
     <PlatformTarget>ARM</PlatformTarget>
     <DebugSymbols>true</DebugSymbols>
     <OutputPath>bin\ARM\Debug\</OutputPath>
-    <DefineConstants>DEBUG;TRACE;NETFX_CORE;WINDOWS_UWP</DefineConstants>
+    <DefineConstants>TRACE;DEBUG;NETFX_CORE;WINDOWS_UWP;CODE_ANALYSIS</DefineConstants>
     <NoWarn>;2008</NoWarn>
     <DebugType>full</DebugType>
     <PlatformTarget>ARM</PlatformTarget>
     <UseVSHostingProcess>false</UseVSHostingProcess>
     <ErrorReport>prompt</ErrorReport>
     <Prefer32Bit>true</Prefer32Bit>
+    <RunCodeAnalysis>true</RunCodeAnalysis>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|ARM'">
     <PlatformTarget>ARM</PlatformTarget>
@@ -51,6 +52,8 @@
     <Compile Include="DeviceFactory.cs" />
     <Compile Include="GrovePi.cs" />
     <Compile Include="I2CDevices\RgbLcdDisplay.cs" />
+    <Compile Include="I2CDevices\SixAxisAccelerometerAndCompass.cs" />
+    <Compile Include="Sensors\AirQualitySensor.cs" />
     <Compile Include="Sensors\ButtonSensor.cs" />
     <Compile Include="Sensors\Buzzer.cs" />
     <Compile Include="Sensors\Led.cs" />
@@ -68,6 +71,7 @@
     <Compile Include="Sensors\Sensor.cs" />
     <Compile Include="Sensors\SensorStatus.cs" />
     <Compile Include="Sensors\SoundSensor.cs" />
+    <Compile Include="Sensors\DHTTemperatureAndHumiditySensor .cs" />
     <Compile Include="Sensors\TemperatureAndHumiditySensor.cs" />
     <Compile Include="Sensors\UltrasonicRangerSensor.cs" />
     <Content Include="Properties\client.winU.rd.xml" />

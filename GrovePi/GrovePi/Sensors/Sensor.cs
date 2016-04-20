@@ -1,4 +1,5 @@
 ﻿using System;
+using GrovePi.Common;
 
 namespace GrovePi.Sensors
 {
@@ -28,6 +29,11 @@ namespace GrovePi.Sensors
         {
             Device.DigitalWrite(Pin, (byte) newState);
             return this as TSensorType;
+        }
+
+        public void AnalogWrite(byte value)
+        {
+            Device.AnalogWrite(Pin,value);
         }
     }
 }

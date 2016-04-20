@@ -24,7 +24,6 @@ namespace HomeWeatherDisplay
     /// </summary>
     public sealed partial class MainPage : Page
     {
-        private static readonly IBuildGroveDevices HomeWeatherDisplay = DeviceFactory.Build;
         private Timer periodicTimer;
         private String temperature = "";
         private String humidity = "";
@@ -35,7 +34,7 @@ namespace HomeWeatherDisplay
         }
         private void TimerCallBack(object state)
         {
-            var tmp = DeviceFactory.Build.TemperatureAndHumiditySensor(Pin.AnalogPin1, Model.OnePointOne).TemperatureInCelcius();
+            var tmp = DeviceFactory.Build.TemperatureAndHumiditySensor(Pin.DigitalPin3, Model.Dht11).TemperatureInCelsius();
             temperature = "temp: " + tmp.ToString("F2") + "C";
             DeviceFactory.Build.RgbLcdDisplay().SetText(temperature).SetBacklightRgb(0, 255, 255);
             //IotupLoadData();

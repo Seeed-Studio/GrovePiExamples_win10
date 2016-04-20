@@ -136,10 +136,6 @@
     </SDKReference>
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\GrovePi\Driver\Driver.csproj">
-      <Project>{6d24ead0-af01-4870-b042-fc782a973c46}</Project>
-      <Name>Driver</Name>
-    </ProjectReference>
     <ProjectReference Include="..\GrovePi\GrovePi\GrovePi.csproj">
       <Project>{a667742a-b887-4b46-8ec1-c671e8bec5e4}</Project>
       <Name>GrovePi</Name>

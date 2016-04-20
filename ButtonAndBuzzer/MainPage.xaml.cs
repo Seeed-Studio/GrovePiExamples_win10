@@ -15,6 +15,7 @@ using Windows.UI.Xaml.Navigation;
 using GrovePi;
 using GrovePi.Sensors;
 using System.Threading;
+using System.Threading.Tasks;
 
 // The Blank Page item template is documented at http://go.microsoft.com/fwlink/?LinkId=402352&clcid=0x409
 
@@ -25,22 +26,39 @@ namespace ButtonAndBuzzer
     /// </summary>
     public sealed partial class MainPage : Page
     {
-        private static readonly IBuildGroveDevices ButtonAndBuzzer = DeviceFactory.Build;
         private Timer periodicTimer;
+        private static UInt16 flag = 0;
+        int RelayOnOff = 0;
+        /* Define Grove Modules name */
+        IButtonSensor GroveButton = DeviceFactory.Build.ButtonSensor(Pin.DigitalPin7);
+        IBuzzer GroveBuzzer = DeviceFactory.Build.Buzzer(Pin.DigitalPin6);
+
+
         public MainPage()
         {
             this.InitializeComponent();
-            this.InitializeComponent();
-            periodicTimer = new Timer(this.TimerCallBack, null, 0, 50);
+            periodicTimer = new Timer(this.TimerCallBack, null, 0, 100);
         }
+
+        private void InitGrovePi()
+        {
+            DeviceFactory.Build.GrovePi().PinMode(Pin.DigitalPin6, PinMode.Output);
+        }
+
         private void TimerCallBack(object state)
         {
-            if (DeviceFactory.Build.ButtonSensor(Pin.DigitalPin4).CurrentState == SensorStatus.On)
+            if (GroveButton.CurrentState == SensorStatus.On)
             {
-                DeviceFactory.Build.Buzzer(Pin.DigitalPin2).ChangeState(SensorStatus.On);
-            }
-            else {
-                DeviceFactory.Build.Buzzer(Pin.DigitalPin2).ChangeState(SensorStatus.Off);
+                if (flag == 0)
+                {
+                    flag = 1;
+                    GroveBuzzer.ChangeState(SensorStatus.Off);
+                }
+                else {
+                    flag = 0;
+                    GroveBuzzer.ChangeState(SensorStatus.On);
+                }
+                Task.Delay(100).Wait();
             }
         }
     }

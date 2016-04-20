@@ -14,6 +14,7 @@ using Windows.UI.Xaml.Media;
 using Windows.UI.Xaml.Navigation;
 using GrovePi;
 using GrovePi.Sensors;
+using GrovePi.I2CDevices;
 using System.Threading;
 
 // The Blank Page item template is documented at http://go.microsoft.com/fwlink/?LinkId=402352&clcid=0x409
@@ -25,17 +26,20 @@ namespace HelloWorld_LCD_
     /// </summary>
     public sealed partial class MainPage : Page
     {
-        private static readonly IBuildGroveDevices HelloWorld_LCD_ = DeviceFactory.Build;
         private Timer periodicTimer;
+
+        IRgbLcdDisplay GroveLCD = DeviceFactory.Build.RgbLcdDisplay();
+
         public MainPage()
         {
 
             this.InitializeComponent();
+            //DeviceFactory.Build.RgbLcdDisplay().Initialize();
             periodicTimer = new Timer(this.TimerCallBack, null, 0, 1000);
         }
         private void TimerCallBack(object state)
         {
-            DeviceFactory.Build.RgbLcdDisplay().SetText("Hello World\nby SeeedStudio").SetBacklightRgb(0, 255, 255);
+            GroveLCD.SetText("Hello World\nby SeeedStudio").SetBacklightRgb(255, 50, 255);
         }
     }
 }

@@ -5,6 +5,7 @@
     <UseEmulator>false</UseEmulator>
     <RemoteDebugEnabled>true</RemoteDebugEnabled>
     <UseAuthentication>false</UseAuthentication>
-    <RemoteDebugMachine>192.168.18.132</RemoteDebugMachine>
+    <RemoteDebugMachine>192.168.4.55</RemoteDebugMachine>
+    <AuthenticationMode>Universal</AuthenticationMode>
   </PropertyGroup>
 </Project>

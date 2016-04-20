@@ -1,0 +1,14 @@
+﻿<Page
+    x:Class="GroveUltrasonicSensor.MainPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:GroveUltrasonicSensor"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d">
+
+    <Grid Background="Black">
+        <TextBlock x:Name="Title" HorizontalAlignment="Center" Margin="320,220,320,0" TextWrapping="Wrap" Text="Win10 For Rpi3 " VerticalAlignment="Top" Height="67" Width="640" FontSize="48" Foreground="White" TextAlignment="Center" RenderTransformOrigin="0.488,1.91"/>
+        <TextBlock x:Name="GroveUltrasonicUI" HorizontalAlignment="Center" Margin="320,330,320,0" TextWrapping="Wrap" Text="Distance: Not Initialized" VerticalAlignment="Top" Width="640" FontSize="26.667" Foreground="#FF14D125" TextAlignment="Center" Height="47" />
+    </Grid>
+</Page>
