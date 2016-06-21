@@ -52,7 +52,7 @@ namespace GroveSoundSensor
                 var tmp = GroveSound.SensorValue();
                 GroveSoundSensorString = "GroveSoundSensor: " + tmp.ToString();
             }
-            catch (Exception ex)
+            catch (Exception /*ex*/)
             {
 
             }

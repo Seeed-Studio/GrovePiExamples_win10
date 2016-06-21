@@ -11900,7 +11900,7 @@
   },
   "libraries": {
     "Microsoft.ApplicationInsights/2.0.0": {
-      "sha512": "xz5CN3ZxR4LEiFctDuZu47MKtGig+yfR6XsZc1aUz4puV6GhlLR7HDYRfDRQH+q2XXYGvh+BThdHbaF5RiXE/w==",
+      "sha512": "0fHI0623ruqUzsxOGBGgWvLKTCKNzpLFT1lWUs759hsnn1vIDdbLeRoyeKwfUkQI4AusHcuuX8jZfGlM2TOnVg==",
       "type": "package",
       "files": [
         "Microsoft.ApplicationInsights.2.0.0.nupkg.sha512",

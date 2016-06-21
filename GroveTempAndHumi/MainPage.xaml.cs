@@ -54,7 +54,7 @@ namespace GroveTempAndHumi
                 var tmp1 = GroveTempHumi.Humidity;
                 SGroveHumiditySensor = "Humidity: " + tmp1.ToString() + "%";
             }
-            catch (Exception ex)
+            catch (Exception /*ex*/)
             {
 
             }

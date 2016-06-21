@@ -26,7 +26,7 @@ namespace HomeWeatherDisplay
     {
         private Timer periodicTimer;
         private String temperature = "";
-        private String humidity = "";
+        //private String humidity = "";
         public MainPage()
         {
             this.InitializeComponent();
