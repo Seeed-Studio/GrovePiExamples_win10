@@ -47,7 +47,7 @@ namespace GroveUltrasonicSensor
                 var tmp = GroveRanger.MeasureInCentimeters();
                 SGroveUltrasonicSensor = "Distace: " + tmp.ToString() + "cm"; 
             }
-            catch (Exception ex)
+            catch (Exception /*ex*/)
             {
 
             }

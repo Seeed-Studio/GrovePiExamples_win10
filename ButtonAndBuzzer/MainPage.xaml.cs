@@ -28,7 +28,6 @@ namespace ButtonAndBuzzer
     {
         private Timer periodicTimer;
         private static UInt16 flag = 0;
-        int RelayOnOff = 0;
         /* Define Grove Modules name */
         IButtonSensor GroveButton = DeviceFactory.Build.ButtonSensor(Pin.DigitalPin7);
         IBuzzer GroveBuzzer = DeviceFactory.Build.Buzzer(Pin.DigitalPin6);

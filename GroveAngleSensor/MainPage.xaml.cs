@@ -52,7 +52,7 @@ namespace GroveAngleSensor
                 var tmp = GroveRotary.SensorValue();
                 GroveAngleSensorString = "GroveAngleSensor: " + tmp.ToString();
             }
-            catch (Exception ex)
+            catch (Exception /*ex*/)
             {
 
             }

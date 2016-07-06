@@ -134,10 +134,11 @@ namespace All_in_One
         private void InitWorker()
         {
             IAsyncAction asyncAction = Windows.System.Threading.ThreadPool.RunAsync(
-            (workItem) => {
+            async (workItem) =>
+            {
                 int work_index = 0;
 
-                int distance=0, sound=0, light=0, rotary=0;
+                int distance = 0, sound = 0, light = 0, rotary = 0;
                 SensorStatus button = SensorStatus.Off;
                 SensorStatus buzzer = SensorStatus.Off;
 
@@ -212,7 +213,7 @@ namespace All_in_One
                         work_index = 0;
                     }
 
-                    Dispatcher.RunAsync(
+                    await Dispatcher.RunAsync(
                         CoreDispatcherPriority.High,
                         () =>
                         {

@@ -52,7 +52,7 @@ namespace GroveLightSensor
                 var tmp = GroveLight.SensorValue();
                 GroveLightSensorString = "GroveLightSensor: " + tmp.ToString();
             }
-            catch (Exception ex)
+            catch (Exception /*ex*/)
             {
 
             }
